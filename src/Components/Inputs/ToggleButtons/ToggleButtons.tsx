@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ToggleButtonGroup, ToggleButton} from "@material-ui/lab";
 
+import './ToggleButtons.css';
+
 function ToggleButtons(): JSX.Element {
   
   const [inclusion, setInclusion] = useState<string>("include");
@@ -11,12 +13,12 @@ function ToggleButtons(): JSX.Element {
   }
 
   return (
-    <div className="inclusion-toggle-buttons">
-      <ToggleButtonGroup orientation="horizontal" value={inclusion} exclusive onChange={(_, tab) => handleToggleButtonGroup(tab)}>
-        <ToggleButton value="include" className="inclusion-toggle-button">
+    <div className='inclusion-toggle-buttons'>
+      <ToggleButtonGroup orientation='horizontal' value={inclusion} exclusive onChange={(_, tab) => handleToggleButtonGroup(tab)}>
+        <ToggleButton value='include' className='inclusion-toggle-button'>
           Include
         </ToggleButton>
-        <ToggleButton value="exclude" className="inclusion-toggle-button">
+        <ToggleButton value='exclude' className='inclusion-toggle-button'>
           Exclude
         </ToggleButton>
       </ToggleButtonGroup>

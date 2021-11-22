@@ -34,6 +34,7 @@
     "semi": ["error", "always"],
     "linebreak-style": ["warn", "unix"],
     "no-console": 1,
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }
