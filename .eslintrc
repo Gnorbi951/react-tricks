@@ -1,25 +1,15 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["next", "next/core-web-vitals", "airbnb"],
+  "root": true,
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
     "lines-between-class-members": [
@@ -30,9 +20,7 @@
       }
     ],
     "object-curly-newline": ["off"],
-    "import/extensions": ["off"],
     "jsx-a11y/anchor-is-valid": ["off"],
-    "@next/next/no-img-element": ["off"],
     "react/destructuring-assignment": ["off"],
     "func-style": ["error", "declaration"],
     "max-len": [
@@ -44,6 +32,8 @@
     ],
     "arrow-parens": ["error", "as-needed"],
     "semi": ["error", "always"],
-    "linebreak-style": ["warn", "unix"]
+    "linebreak-style": ["warn", "unix"],
+    "no-console": 1,
+    "indent": ["error", 2]
   }
 }
