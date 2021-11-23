@@ -8,6 +8,8 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     buttonColor: { control: 'color' },
+    selectedColor: { control: 'color' },
+    textColor: { control: 'color' }
   },
 } as ComponentMeta<typeof ToggleButtons>;
 
@@ -15,5 +17,7 @@ const Template: ComponentStory<typeof ToggleButtons> = (args) => <ToggleButtons 
 
 export const Main = Template.bind({});
 Main.args = {
-  color: '#21a5ef',
+  buttonColor: '#b7eafa',
+  selectedColor: '#006699',
+  textColor: '#fff',
 };

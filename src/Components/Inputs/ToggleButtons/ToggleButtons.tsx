@@ -2,9 +2,12 @@ import { useState } from "react";
 import { ToggleButtonGroup, ToggleButton} from "@material-ui/lab";
 
 import './ToggleButtons.css';
+import { styled } from "@material-ui/core";
 
-export interface ToggleButtonsProps {
-  color: string;
+interface ToggleButtonsProps {
+  buttonColor: string;
+  selectedColor: string;
+  textColor: string;
 }
 
 function ToggleButtons(props: ToggleButtonsProps): JSX.Element {
@@ -15,25 +18,38 @@ function ToggleButtons(props: ToggleButtonsProps): JSX.Element {
     // Clicking on current button returns null.
     if (buttonValue != null) setInclusion(buttonValue);
   }
+  
+  const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+    '& .MuiToggleButtonGroup-grouped': {
+      margin: theme.spacing(0.5),
+      color: props.textColor,
+      background: props.buttonColor,
+      border: '1px solid #21a5ef',
+      '&.Mui-selected': {
+        background: props.selectedColor,
+      },
+    },
+  }));
 
   return (
-    <div className='inclusion-toggle-buttons'>
-      <ToggleButtonGroup
+    <div
+    >
+      <StyledToggleButtonGroup
         orientation='horizontal'
         value={inclusion}
         exclusive
-        style={{color: props.color}}
         onChange={(_, tab) => handleToggleButtonGroup(tab)}
       >
-        <ToggleButton value='include' className='inclusion-toggle-button'>
+        <ToggleButton value='include'>
           Include
         </ToggleButton>
-        <ToggleButton value='exclude' className='inclusion-toggle-button'>
+        <ToggleButton value='exclude'>
           Exclude
         </ToggleButton>
-      </ToggleButtonGroup>
+      </StyledToggleButtonGroup>
     </div>
   );
 }
+
 
 export default ToggleButtons;

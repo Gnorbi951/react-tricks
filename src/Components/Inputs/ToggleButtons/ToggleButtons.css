@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-  }
-  
-  .inclusion-toggle-button {
-    background: #b7eafad7 !important;
-    color: #000 !important;
-    border: 1px solid #21a5ef !important;
-  }
-  .inclusion-toggle-button.Mui-selected {
-    background: #006699 !important;
-    color: #fff !important;
+}
+
+.inclusion-toggle-button {
+  background: #b7eafa !important;
+  color: #000 !important;
+  border: 1px solid #21a5ef !important;
+}
+.inclusion-toggle-button.Mui-selected {
+  background: #006699 !important;
+  color: #fff !important;
   }
