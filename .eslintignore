@@ -3,4 +3,5 @@ build/
 out/
 **/asd/
 .storybook/**
-src/stories/**
+*.stories.tsx
+src/stories**

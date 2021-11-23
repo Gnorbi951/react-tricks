@@ -3,7 +3,11 @@ import { ToggleButtonGroup, ToggleButton} from "@material-ui/lab";
 
 import './ToggleButtons.css';
 
-function ToggleButtons(): JSX.Element {
+export interface ToggleButtonsProps {
+  color: string;
+}
+
+function ToggleButtons(props: ToggleButtonsProps): JSX.Element {
   
   const [inclusion, setInclusion] = useState<string>("include");
 
@@ -14,7 +18,13 @@ function ToggleButtons(): JSX.Element {
 
   return (
     <div className='inclusion-toggle-buttons'>
-      <ToggleButtonGroup orientation='horizontal' value={inclusion} exclusive onChange={(_, tab) => handleToggleButtonGroup(tab)}>
+      <ToggleButtonGroup
+        orientation='horizontal'
+        value={inclusion}
+        exclusive
+        style={{color: props.color}}
+        onChange={(_, tab) => handleToggleButtonGroup(tab)}
+      >
         <ToggleButton value='include' className='inclusion-toggle-button'>
           Include
         </ToggleButton>
