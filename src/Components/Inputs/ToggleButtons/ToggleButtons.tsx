@@ -20,14 +20,17 @@ function ToggleButtons(props: ToggleButtonsProps): JSX.Element {
   }
   
   const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
+    border: '1px solid #21a5ef',
     '& .MuiToggleButtonGroup-grouped': {
       margin: theme.spacing(0.5),
       color: props.textColor,
       background: props.buttonColor,
-      border: '1px solid #21a5ef',
       '&.Mui-selected': {
         background: props.selectedColor,
       },
+      '&.MuiToggleButton-root': {
+        margin: 0,
+      }
     },
   }));
 
